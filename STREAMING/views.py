@@ -12,3 +12,4 @@ def movies(request):
         return render(request, 'STREAMING/movies.html', {'movies': movies})
     else:
         return HttpResponseBadRequest("Invalid request method")
+    
