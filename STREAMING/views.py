@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+# Main site view
+def movies(request):
+    return HttpResponse("Welcome to NESFLIX! The best streaming service in the world!")
