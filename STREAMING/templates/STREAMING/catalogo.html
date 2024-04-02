@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+</head>
+<body>
+    <h1>{{ titulo }}</h1>
+    <ul>
+        {% for peli in peliculas %}
+            <li>
+                <h1>Título: {{ peli.titulo }}</h1>
+                <h3>Sinopsis: {{ peli.sinopsis }}</h3>
+                <h3>Director: {{ peli.director }}</h3>
+                <p>Fecha de lanzamiento: {{ peli.fecha_lanzamiento }}</p>
+                {% if peli.poster %}
+                    <img src="{{ peli.poster.url }}" alt="Poster de {{ peli.titulo }}">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+h1 {
+    color: rgb(198, 103, 103);
+    background-color: yellow;
+    font-size: 50px;
+}
+
+body {
+    background-color: lightblue;
+}
+
+h2 {
+    color: blue;
+}
+
+h6 {
+    color: green;
+}

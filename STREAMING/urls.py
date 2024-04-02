@@ -1,10 +1,7 @@
-# urls.py in the STREAMING app
-
+from STREAMING.views import *
 from django.urls import path
-from STREAMING import views
 
 urlpatterns = [
-    # Other URL patterns for the STREAMING app
-    
-    path('', views.movies, name='movies'),
+    path('', index, name='crear'),
+    path('catalogo/', mis_pelis, name='catalogo'),
 ]

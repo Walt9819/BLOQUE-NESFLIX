@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NESFLIX</title>
+</head>
+<body>
+    <link rel="stylesheet" href="{% static 'STREAMING/styles.css' %}">
+    <h1>¡Hola desde NESFLIX!</h1>
+    <p>¿Quieres agregar una nueva película?</p>
+    <form action="{% url 'crear' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit">Crear película</button>
+    </form>
+</body>
+</html>

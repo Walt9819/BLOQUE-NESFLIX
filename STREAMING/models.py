@@ -1,13 +1,16 @@
 from django.db import models
 
-class Movie(models.Model):
-    title = models.CharField(max_length=255)
-    release_year = models.IntegerField()
-    genre = models.CharField(max_length=100)
+# Modelo (tabla) de películas
+class Pelis(models.Model):
+    titulo = models.CharField(max_length=100)
+    sinopsis = models.CharField(max_length=500)
     director = models.CharField(max_length=100)
-    description = models.TextField(null=True, default=None)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    fecha_lanzamiento = models.DateField()
+    mostrar = models.BooleanField(default=True)
+    poster = models.ImageField(upload_to='posters/', null=True)
 
-    def __str__(self):
-        return f"{self.title} ({self.release_year})"
+
+# Modelo (tabla) géneros
+class Generos(models.Model):
+    pelicula = models.ForeignKey(Pelis, on_delete=models.CASCADE)
+    genero = models.CharField(max_length=50)
